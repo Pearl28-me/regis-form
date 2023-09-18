@@ -51,27 +51,13 @@ const validateInputs = () => {
         setError(telno, 'Telephone number should be 10 characters');
     }
 
-    /*if (emailValue === '') {
+if (emailValue === '') {
         setError(email, 'Email is required');
-    } else if (!isValidEmail(emailValue)) {
+    } else if (!isValidEmail(emailValue.includes('@'))) {
         setError(email, 'Provide a valid email address');
     } else {
         setSuccess(email);
-    }*///
-    const validateInputs = (event) => {
-        // ... your existing code ...
-    
-        if (!emailValue.includes('@')) {
-            emailError.textContent = 'Email address must contain @ symbol.';
-            event.preventDefault(); // Prevent form submission
-        } else {
-            emailError.textContent = '';
-        }
-    };
+    }
     
 };
-
-// Define the isValidEmail function if not already defined
-//function isValidEmail(email) {
-    // Implement your email validation logic here
 
