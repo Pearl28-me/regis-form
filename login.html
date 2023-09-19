@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registeration Form</title>
     <link rel="stylesheet"  href="edit.css">
-    <script src="valid.js"></script>
 </head>
 <body>
     <div class="container">
-        <form id="form" action="/">
+        <form id="form" action="page.html">
             <h1>Registration</h1>
         <div class="input-control">
             <label for="firstName">First Name</label>
@@ -31,10 +30,22 @@
              <input type="text" id="email" name="email">
              <div class="error">
              </div>
-             <a href="page.html">
              <button type="submit">Sign Up</button>
-             </a>
         </form>
     </div>
 </body>
+<script>
+    var form = document.getElementById('form')
+
+    form.addEventListener('submit',function(event){
+        event.preventDefault()
+        
+        var username = document.getElementById('firstname').value
+        console.log(firstname)
+
+        var email = document.getElementById('email').value
+        console.log(email)
+    });
+</script>
+
 </html>
