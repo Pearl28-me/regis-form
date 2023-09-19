@@ -5,26 +5,27 @@ const telno = document.getElementById('telno');
 const email = document.getElementById('email');
 
 form.addEventListener('submit', e => {
-    e.preventDefault();
-    validateInputs();
+e.preventDefault();
+
+validateInputs();
 });
 
 const setError = (element, message) => {
     const inputControl = element.parentElement;
-    const errorDisplay = inputControl.querySelector('.error'); // Fix typo
-    errorDisplay.innerText = message; // Fix case
+    const errorDisplay = InputControl.queryselector('error');
+
+    errorDisplay.InnerText = message;
     inputControl.classList.add('error');
     inputControl.classList.remove('success');
-};
-
+}
 const setSuccess = element => {
     const inputControl = element.parentElement;
-    const errorDisplay = inputControl.querySelector('.error'); // Fix typo
-    errorDisplay.innerText = ''; // Fix case
+    const errorDisplay = InputControl.queryselector('error');
+
+    errorDisplay.InnerText = '';
     inputControl.classList.add('success');
     inputControl.classList.remove('error');
-};
-
+}
 const validateInputs = () => {
     const firstnameValue = firstname.value.trim();
     const lastnameValue = lastname.value.trim();
@@ -32,32 +33,31 @@ const validateInputs = () => {
     const emailValue = email.value.trim();
 
     if (firstnameValue === '') {
-        setError(firstname, 'First name is required');
+        setError(firstname, 'firstname is required');
     } else {
         setSuccess(firstname);
     }
 
     if (lastnameValue === '') {
-        setError(lastname, 'Last name is required');
+        setError(lastname, 'lastname is required');
     } else {
-        setSuccess(lastname);
+        setSuccess (lastname);
     }
 
-    if (telnoValue === '') {
+    if(telno === '') {
         setError(telno, 'Telephone number is required');
-    } else if (telnoValue.length === 10) {
+    } else if (telnoValue.length === 10 ){
         setSuccess(telno);
     } else {
         setError(telno, 'Telephone number should be 10 characters');
     }
 
-if (emailValue === '') {
+    if (emailValue === '') {
         setError(email, 'Email is required');
-    } else if (!isValidEmail(emailValue.includes('@'))) {
-        setError(email, 'Provide a valid email address');
-    } else {
-        setSuccess(email);
-    }
-    
-};
+    } else if (!isValidEmail(emailValue)) {
+            setError(email, 'Provide a valid email address');
+        } else {
+        setSuccess (lastname);
+        }
 
+}
