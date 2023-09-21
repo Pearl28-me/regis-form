@@ -1,3 +1,4 @@
+
 const form = document.getElementById('form');
 const firstname = document.getElementById('firstName');
 const lastname = document.getElementById('lastName');
@@ -85,3 +86,4 @@ const isValidEmail = (email) => {
         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
 }
+
