@@ -1,11 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Saved Form Data</title>
 </head>
-<body> 
-    <h4>sign up successful</h4>
+<body>
+    <h3>Sign Up Successful</h3>
+    <script>
+        // Function to parse URL parameters
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return "";
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Get form data from URL parameters
+        const firstName = getParameterByName("firstName");
+        const lastName = getParameterByName("lastName");
+        const telephone = getParameterByName("telephone");
+        const email = getParameterByName("email");
+
+        // Display the saved form data on the new page
+        const resultContainer = document.createElement("div");
+        resultContainer.innerHTML = `
+            <p>${firstName}</p>
+            <p>${lastName}</p>
+            <p>${telephone}</p>
+            <p>${email}</p>
+        `;
+        document.body.appendChild(resultContainer);
+    </script>
 </body>
 </html>
